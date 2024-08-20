@@ -68,11 +68,11 @@ echo "$response" | jq '.[].id' | while read -r id; do
   echo "Accepting invitation to repository $repositoryFullName from user $inviterLogin..."
   echo "If something goes wrong, you can accept the invitation manually at $htmlUrl."
 
-  response=$(acceptUserRepositoryInvitation "$id")
+  acceptResponse=$(acceptUserRepositoryInvitation "$id")
 
-  if echo "$response" | jq -e 'has("status")' >/dev/null 2>&1; then
+  if echo "$acceptResponse" | jq -e 'has("status")' >/dev/null 2>&1; then
     echo "Error: GitHub API's returned the following unexpected response :" >&2
-    echo "$response" >&2
+    echo "$acceptResponse" >&2
     exit 1
   fi
 done
