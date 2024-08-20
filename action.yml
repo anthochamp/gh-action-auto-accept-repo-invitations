@@ -1,14 +1,16 @@
-name: 'Auto Accept Collabs'
-description: 'Github Action to auto accept all collaboration invites'
-author: 'kbrashears5'
+name: "Auto Accept Collaboration Invitations"
+description: "GitHub Action to automatically accept collaboration invitations to repositories"
+author: "Anthony Champagne <dev@anthonychampagne.fr> | Original author: kbrashears5"
+
 branding:
-  icon: 'upload-cloud'
-  color: 'purple'
+  icon: "upload-cloud"
+  color: "purple"
+
 inputs:
   TOKEN:
-    description: 'Personal access token with Repo privileges'
+    description: "A PAT with repo privileges or a fined-grained PAT with repositories administration R+W privileges"
     required: true
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"

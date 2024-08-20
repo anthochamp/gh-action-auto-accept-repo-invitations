@@ -1,35 +1,36 @@
-# github-action-auto-accept-collabs
-Github Action to auto accept all collaboration invites
+# A GitHub Action to automatically accept collaboration invitations to repositories
 
-[![version](https://img.shields.io/github/v/release/kbrashears5/github-action-auto-accept-collabs)](https://img.shields.io/github/v/release/kbrashears5/github-action-auto-accept-collabs)
+[![version](https://img.shields.io/github/v/release/anthochamp/github-action-auto-accept-repo-invitations)](https://img.shields.io/github/v/release/anthochamp/github-action-auto-accept-repo-invitations)
 
-# Use Cases
-Auto accept all collaboration invites. Useful for a bot account
+## Setup
 
-# Setup
-Create a new file called `/.github/workflows/auto-accept-collabs.yml` that looks like so:
+Create a new workflow in your user's repository (where you put your beautiful GitHub's profile README.md) :
+
 ```yaml
-name: Auto Accept Collabs
+name: Auto accept collaboration invitations
 
 on:
-  push:
-    branches:
-      - master
   schedule:
     - cron: 0 0 * * *
 
 jobs:
-  file_sync:
+  accept:
     runs-on: ubuntu-latest
     steps:
-      - name: Fetching Local Repository
-        uses: actions/checkout@master
       - name: Auto Accept Collabs
-        uses: kbrashears5/github-action-auto-accept-collabs@v1.0.0
+        uses: anthochamp/anthochamp/github-action-auto-accept-repo-invitations@1.0.0
         with:
-          TOKEN: ${{ secrets.ACTIONS }}
+          TOKEN: ${{ secrets.TOKEN }}
 ```
+
+Use a tool like [crontab Guru](https://crontab.guru/) to generate a cron scheduling string.
+
 ## Parameters
-| Parameter | Required | Description |
-| --- | --- | --- |
-| TOKEN | true | Personal Access Token with Repo scope |
+
+| Variable | Description |
+| - | - |
+| TOKEN | **REQUIRED**<br>A PAT with repo privileges. |
+
+## Known issues
+
+- It should work with a fined-grained PAT with repositories administration R+W privileges but for some reason it does not.

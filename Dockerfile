@@ -1,20 +1,7 @@
-# https://pkgs.alpinelinux.org/packages
 FROM alpine:latest
 
-RUN apk add --no-cache bash
+RUN apk add jq curl
 
-RUN apk add git
+COPY --chmod=775 action.sh /
 
-# add jq for creating json
-RUN apk add jq
-
-# add curl for github api
-RUN apk add curl
-
-COPY error-matcher.json /error-matcher.json
-
-COPY entrypoint.sh /entrypoint.sh
-
-RUN chmod 777 entrypoint.sh
-
-ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/action.sh"]
