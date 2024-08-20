@@ -17,8 +17,7 @@ jobs:
   accept:
     runs-on: ubuntu-latest
     steps:
-      - name: Auto Accept Collabs
-        uses: anthochamp/anthochamp/github-action-auto-accept-repo-invitations@1.0.0
+      - uses: anthochamp/anthochamp/github-action-auto-accept-repo-invitations@v1.0.1
         with:
           TOKEN: ${{ secrets.TOKEN }}
 ```
