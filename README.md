@@ -17,7 +17,7 @@ jobs:
   accept:
     runs-on: ubuntu-latest
     steps:
-      - uses: anthochamp/anthochamp/github-action-auto-accept-repo-invitations@v1.0.1
+      - uses: anthochamp/github-action-auto-accept-repo-invitations@v1.0.1
         with:
           TOKEN: ${{ secrets.TOKEN }}
 ```
