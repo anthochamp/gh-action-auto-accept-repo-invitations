@@ -20,7 +20,7 @@ jobs:
   accept:
     runs-on: ubuntu-latest
     steps:
-      - uses: anthochamp/gh-action-auto-accept-repo-invitations@v1.0.1
+      - uses: anthochamp/gh-action-auto-accept-repo-invitations@v1.0.2
         with:
           TOKEN: ${{ secrets.TOKEN }}
 ```
