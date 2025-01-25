@@ -1,6 +1,7 @@
-FROM alpine:latest
+FROM alpine:3.21.2
 
-RUN apk add jq curl
+# hadolint ignore=DL3018
+RUN apk --no-cache add jq curl
 
 COPY --chmod=775 action.sh /
 

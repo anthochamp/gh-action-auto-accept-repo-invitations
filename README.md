@@ -1,6 +1,9 @@
-# A GitHub Action to automatically accept collaboration invitations to repositories
+# GitHub Action to automatically accept collaboration invitations to GitHub repositories
 
-[![version](https://img.shields.io/github/v/release/anthochamp/github-action-auto-accept-repo-invitations)](https://img.shields.io/github/v/release/anthochamp/github-action-auto-accept-repo-invitations)
+![GitHub License](https://img.shields.io/github/license/anthochamp/gh-action-auto-accept-repo-invitations?style=for-the-badge)
+
+![GitHub Release](https://img.shields.io/github/v/release/anthochamp/gh-action-auto-accept-repo-invitations?style=for-the-badge&color=457EC4)
+![GitHub Release Date](https://img.shields.io/github/release-date/anthochamp/gh-action-auto-accept-repo-invitations?style=for-the-badge&display_date=published_at&color=457EC4)
 
 ## Setup
 
@@ -17,7 +20,7 @@ jobs:
   accept:
     runs-on: ubuntu-latest
     steps:
-      - uses: anthochamp/anthochamp/github-action-auto-accept-repo-invitations@v1.0.1
+      - uses: anthochamp/gh-action-auto-accept-repo-invitations@v1.0.1
         with:
           TOKEN: ${{ secrets.TOKEN }}
 ```
